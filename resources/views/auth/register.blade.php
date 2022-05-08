@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="{{ asset("assets/dash/src") }}/images/favicon.png">
+    <link rel="shortcut icon" href="{{ asset("assets/resume") }}/favicon.png">  
     <!-- Page Title  -->
-    <title>Login | Resumenya</title>
+    <title>Daftar Akun Pengguna Baru | Resumenya</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset("assets/dash/src") }}/assets/css/dashlite.css?ver=2.9.1">
     <link id="skin-default" rel="stylesheet" href="{{ asset("assets/dash/src") }}/assets/css/theme.css?ver=2.9.1">
@@ -23,7 +23,7 @@
             <!-- wrap @s -->
             <div class="nk-wrap nk-wrap-nosidebar">
                 <!-- content @s -->
-                <div class="nk-content ">
+                <div class="nk-content "style="max-width:970px!important;margin:0px auto">
                     <div class="nk-split nk-split-page nk-split-md">
                         <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
                             <div class="absolute-top-right d-lg-none p-3 p-sm-5">
@@ -32,15 +32,15 @@
                             <div class="nk-block nk-block-middle nk-auth-body">
                                 <div class="brand-logo pb-5">
                                     <a href="/" class="logo-link">
-                                        <img class="logo-light logo-img logo-img-lg" src="{{ asset("assets/dash/src") }}/images/logo.png" srcset="{{ asset("assets/dash/src") }}/images/logo2x.png 2x" alt="logo">
-                                        <img class="logo-dark logo-img logo-img-lg" src="{{ asset("assets/dash/src") }}/images/logo-dark.png" srcset="{{ asset("assets/dash/src") }}/images/logo-dark2x.png 2x" alt="logo-dark">
+                                        <img class="logo-light logo-img logo-img-lg" src="{{ asset("assets/resume") }}/logo_gray.png" srcset="{{ asset("assets/resume") }}/logo_gray100.png 2x" alt="logo">
+                                        <img class="logo-dark logo-img logo-img-lg" src="{{ asset("assets/resume") }}/logo_resume.png" srcset="{{ asset("assets/resume") }}/logo_resume100.png 2x" alt="logo-dark">
                                     </a>
                                 </div>
                                 <div class="nk-block-head">
                                     <div class="nk-block-head-content">
-                                        <h5 class="nk-block-title">Register</h5>
+                                        <h5 class="nk-block-title">Daftar Akun Baru</h5>
                                         <div class="nk-block-des">
-                                            <p>Create New Resumenya Account</p>
+                                            <p>Jadi Pengguna Baru Resumenya dengan mendaftarkan akun dan Permudah Kelola CV & Resume mu.</p>
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
@@ -49,115 +49,114 @@
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="first_name">First Name</label>
+                                                <label class="form-label" for="first_name">Nama Depan</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg " id="first_name" name="first_name" placeholder="Enter your first name" value="" required="" autocomplete="first_name" autofocus=""></div>
+                                                    <input type="text" class="form-control form-control-lg " id="first_name" name="first_name" placeholder="Isi Nama Depanmu" value="" required="" autocomplete="first_name" autofocus=""></div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="last_name">Last Name</label>
+                                                <label class="form-label" for="last_name">Nama Belakang</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg " id="last_name" name="last_name" placeholder="Enter your last name" value="" required="" autocomplete="last_name" autofocus=""></div>
+                                                    <input type="text" class="form-control form-control-lg " id="last_name" name="last_name" placeholder="Isi Nama Belakangmu" value="" required="" autocomplete="last_name" autofocus=""></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="username">Username</label>
+                                        <label class="form-label" for="username">Nama Pengguna</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg " id="username" name="username" placeholder="Enter your username" value="" required="" autocomplete="username" autofocus=""></div>
+                                            <input type="text" class="form-control form-control-lg " id="username" name="username" placeholder="Isi dengan Nama Pengguna yang Unik" value="" required="" autocomplete="username" autofocus=""></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="email">Email</label>
+                                        <label class="form-label" for="email">Alamat Email</label>
                                         <div class="form-control-wrap">
-                                            <input type="email" class="form-control form-control-lg " id="email" placeholder="Enter your email address" name="email" value="" required="" autocomplete="email"></div>
+                                            <input type="email" class="form-control form-control-lg " id="email" placeholder="Isi dengan Email Pribadimu" name="email" value="" required="" autocomplete="email"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="password">Password</label>
+                                        <label class="form-label" for="password">Kata Kunci</label>
                                         <div class="form-control-wrap">
                                             <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
                                                 <em class="passcode-icon icon-show icon ni ni-eye"></em>
                                                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                                             </a>
-                                            <input type="password" class="form-control form-control-lg " id="password" placeholder="Enter your password" name="password" required="" autocomplete="new-password"></div>
+                                            <input type="password" class="form-control form-control-lg " id="password" placeholder="Isi dengan Kata Kunci Unik Pilihan Kamu" name="password" required="" autocomplete="new-password"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="form-label" for="password-confirm">Confirm Password</label>
+                                        <label class="form-label" for="password-confirm">Pastikan Kata Kunci</label>
                                         <div class="form-control-wrap">
                                             <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password-confirm">
                                                 <em class="passcode-icon icon-show icon ni ni-eye"></em>
                                                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                                             </a>
-                                            <input type="password" class="form-control form-control-lg " id="password-confirm" placeholder="Enter your password" name="password_confirmation" required="" autocomplete="new-password">
+                                            <input type="password" class="form-control form-control-lg " id="password-confirm" placeholder="Isi ulang dengan Kata Kunci Sebelumnya" name="password_confirmation" required="" autocomplete="new-password">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-control-xs custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="checkbox" required="">
-                                            <label class="custom-control-label" for="checkbox">I agree to Resumenya <a tabindex="-1" href="#">Privacy Policy</a> &amp; <a tabindex="-1" href="#"> Terms.</a></label>
+                                            <label class="custom-control-label" for="checkbox"> Dengan ini saya Menyetujui <a tabindex="-1" href="{{ route("privacy") }}">Kebijakan Privasi </a> &amp; <a tabindex="-1" href="{{ route("terms") }}">Persyaratan</a> Resumenya yang berlaku.</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-lg btn-primary btn-block">Register</button>
+                                        <button class="btn btn-lg btn-primary btn-block">Proses Daftar</button>
                                     </div>
                                 </form><!-- form -->
-                                <div class="form-note-s2 pt-4"> Already have an account ? <a href="{{ route("login") }}"><strong>Sign in
-                                            instead</strong></a>
+                                <div class="form-note-s2 pt-4"> Sudah punya Akun Pengguna? <a href="{{ route("login") }}"><strong>Masuk Segera</strong></a>
                                 </div>
                             </div>
                             <div class="nk-block nk-auth-footer">
                                 <div class="nk-block-between">
                                     <ul class="nav nav-sm">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Terms & Condition</a>
+                                            <a class="nav-link" href="{{ route("terms") }}">Syarat dan Ketentuan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Privacy Policy</a>
+                                            <a class="nav-link" href="{{ route("privacy") }}">Kebijakan Privasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Help</a>
+                                            <a class="nav-link" href="{{ route("help") }}">Bantuan</a>
                                         </li>
                                     </ul><!-- .nav -->
                                 </div>
                                 <div class="mt-3">
-                                    <p>&copy; 2022 Resumenya. All Rights Reserved.</p>
+                                    <p>&copy; 2022 Resumenya. Segala Hak Cipta Berlaku.</p>
                                 </div>
                             </div><!-- .nk-block -->
                         </div><!-- .nk-split-content -->
                         <div class="nk-split-content nk-split-stretch bg-lighter d-flex toggle-break-lg toggle-slide toggle-slide-right" data-content="athPromo" data-toggle-screen="lg" data-toggle-overlay="true">
-                            <div class="slider-wrap w-100 w-max-550px p-3 p-sm-5 m-auto">
-                                <div class="slider-init" data-slick='{"dots":true, "arrows":false}'>
+                            <div class="slider-wrap w-100 w-max-550px p-3 m-auto"style="padding:0px!important">
+                                <div class="slider-init" data-slick='{"dots":true, "arrows":true}'>
                                     <div class="slider-item">
                                         <div class="nk-feature nk-feature-center">
                                             <div class="nk-feature-img">
-                                                <img class="round" src="{{ asset("assets/dash/src") }}/images/slides/promo-a.png" srcset="{{ asset("assets/dash/src") }}/images/slides/promo-a2x.png 2x" alt="">
+                                                <img class="round" src="{{ asset("assets/resume") }}/Vector01.png"  srcset="{{ asset("assets/resume") }}/Vector01_300px.png 2x" alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>Resumenya</h4>
-                                                <p>You can start to create your products easily with its user-friendly design & most completed responsive layout.</p>
+                                                <h4>Profil Baru untuk Segala Urusan</h4>
+                                                <p>Media Profil yang dapat dilengkapi data Resume, Portofolio, Website ataupun Lapak Bisnis kamu. Jadi ga perlu lagi cetak dan kasih Kartu Nama.</p>
                                             </div>
                                         </div>
                                     </div><!-- .slider-item -->
                                     <div class="slider-item">
                                         <div class="nk-feature nk-feature-center">
                                             <div class="nk-feature-img">
-                                                <img class="round" src="{{ asset("assets/dash/src") }}/images/slides/promo-b.png" srcset="{{ asset("assets/dash/src") }}/images/slides/promo-b2x.png 2x" alt="">
+                                                <img class="round" src="{{ asset("assets/resume") }}/Vector02.png"  srcset="{{ asset("assets/resume") }}/Vector02_300px.png 2x" alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>Resumenya</h4>
-                                                <p>You can start to create your products easily with its user-friendly design & most completed responsive layout.</p>
+                                                <h4>Berikan Akses Seperlunya</h4>
+                                                <p>Mulai Lindungi dan batasi penyebaran data diri kamu dengan memberikan akses seperlunya ke orang yang tepat sesuai kebutuhan.</p>
                                             </div>
                                         </div>
                                     </div><!-- .slider-item -->
                                     <div class="slider-item">
                                         <div class="nk-feature nk-feature-center">
                                             <div class="nk-feature-img">
-                                                <img class="round" src="{{ asset("assets/dash/src") }}/images/slides/promo-c.png" srcset="{{ asset("assets/dash/src") }}/images/slides/promo-c2x.png 2x" alt="">
+                                                <img class="round" src="{{ asset("assets/resume") }}/Vector03.png" srcset="{{ asset("assets/resume") }}/Vector03_300px.png 2x"  alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>Resumenya</h4>
-                                                <p>You can start to create your products easily with its user-friendly design & most completed responsive layout.</p>
+                                                <h4>Bangun Jenjang Karir yang Sesuai</h4>
+                                                <p>Ikuti Penilaian Diri yang membantu memberikan rekomendasi Pekerjaan, Budaya Perusahaan dan Pengembangan yang tepat sesuai dengan Diri Kamu.</p>
                                             </div>
                                         </div>
                                     </div><!-- .slider-item -->

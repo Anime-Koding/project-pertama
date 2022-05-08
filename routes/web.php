@@ -43,6 +43,9 @@ Route::get('/', function () {
 });
 
 Route::get("profile/{user:username}",[ProfileController::class,'index'])->name("profile");
+Route::get("terms",[GuestController::class,'terms'])->name("terms");
+Route::get("privacy",[GuestController::class,'privacy'])->name("privacy");
+Route::get("help",[GuestController::class,'help'])->name("help");
 
 // admin
 Route::middleware(['auth:sanctum', 'verified'])->prefix("/admin")->group(function(){
