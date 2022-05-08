@@ -44,6 +44,19 @@
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
+
+                                @if($errors->any())
+                                    <div class="alert alert-icon alert-danger" role="alert">
+                                    <em class="icon ni ni-cross-circle"></em>
+                                        <strong>Register error</strong>.
+                                        <ul class="list">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
                                 <form method="POST" action="{{ route("register") }}">
                                     @csrf
                                     <div class="row mb-3">

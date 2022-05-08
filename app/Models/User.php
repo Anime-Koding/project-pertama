@@ -26,7 +26,7 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $connection = 'auth_db';
+    // protected $connection = 'auth_db';
 
     /**
      * The attributes that are mass assignable.
