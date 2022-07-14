@@ -42,64 +42,62 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("profile/{user:username}",[ProfileController::class,'index'])->name("profile");
-Route::get("terms",[GuestController::class,'terms'])->name("terms");
-Route::get("privacy",[GuestController::class,'privacy'])->name("privacy");
-Route::get("help",[GuestController::class,'help'])->name("help");
+Route::get("profile/{user:username}", [ProfileController::class, 'index'])->name("profile");
+// Route::get("terms",[GuestController::class,'terms'])->name("terms");
+// Route::get("privacy",[GuestController::class,'privacy'])->name("privacy");
+// Route::get("help",[GuestController::class,'help'])->name("help");
 
 // admin
-Route::middleware(['auth:sanctum', 'verified'])->prefix("/admin")->group(function(){
-    Route::resource("layout",LayoutController::class)->except("show");
+Route::middleware(['auth:sanctum', 'verified'])->prefix("/admin")->group(function () {
+    Route::resource("layout", LayoutController::class)->except("show");
 
-    Route::controller(SettingController::class)->name("setting.")->group(function(){
-        Route::get("settings",'index')->name("index");
-        Route::put("settings",'update')->name("update");
+    Route::controller(SettingController::class)->name("setting.")->group(function () {
+        Route::get("settings", 'index')->name("index");
+        Route::put("settings", 'update')->name("update");
     });
-    
 });
 
 // pengguna
-Route::middleware(['auth:sanctum', 'verified'])->group(function()
-{
-    Route::get('/dashboard', [DashboardController::class,"index"])->name('dashboard');
-    Route::post('/update_public', [DashboardController::class,"update_public"])->name('update_public');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, "index"])->name('dashboard');
+    Route::post('/update_public', [DashboardController::class, "update_public"])->name('update_public');
 
-    Route::resource("experience",ExperienceController::class)->except("show"); 
-    Route::resource("education",EducationController::class)->except("show"); 
-    
-    Route::resource("skill",SkillController::class)->except("show"); 
+    Route::resource("experience", ExperienceController::class)->except("show");
+    Route::resource("education", EducationController::class)->except("show");
 
-    Route::controller(SkillController::class)->prefix("subskill")->name("skill.")->group(function(){
-        Route::post("storeSubskill",'storesubSkill')->name("storeSubskill");
-        Route::get("{skill}/edit",'editsubSkill')->name("editsubSkill");
-        Route::delete("{skill}",'destroysubSkill')->name("destroysubSkill");
-    Route::put("{skill}",'updateSubskill')->name("updateSubskill");
+    Route::resource("skill", SkillController::class)->except("show");
+
+    Route::controller(SkillController::class)->prefix("subskill")->name("skill.")->group(function () {
+        Route::post("storeSubskill", 'storesubSkill')->name("storeSubskill");
+        Route::get("{skill}/edit", 'editsubSkill')->name("editsubSkill");
+        Route::delete("{skill}", 'destroysubSkill')->name("destroysubSkill");
+        Route::put("{skill}", 'updateSubskill')->name("updateSubskill");
     });
-    
-    Route::resource("service",ServiceController::class)->except("show");
-    Route::resource("portfolio",PortfolioController::class)->except("show");
-    Route::resource("pcategory",PortfolioCategoryController::class)->except("show");
-    Route::resource("interest",InterestController::class)->except("show");
-    Route::resource("award",AwardController::class)->except("show");
-    Route::resource("language",LanguageController::class)->except("show");
-    Route::resource("bcategory",BlogCategoryController::class)->except("show");
-    Route::resource("blog",BlogController::class)->except("show");
-    Route::resource("client",ClientController::class)->except("show");
-    Route::resource("testimonial",TestimonialController::class)->except("show");
-    Route::resource("reference",ReferenceController::class)->except("show");
-    
-    Route::post("group_change_status",[FeatureGroupController::class,'changestatus'])->name("group.change_status");
-    Route::resource("group",FeatureGroupController::class)->except("show");
 
-    Route::get("setlayout",[LayoutController::class,'setLayout'])->name("setlayout");
-    Route::post("setlayout",[LayoutController::class,'storelayout'])->name("storelayout");
-    
-    Route::resource("visitor",VisitorController::class)->except("show");
-    Route::resource("contact",ContactController::class)->except(["show","create","edit","update"]);
-    Route::resource("appointment",AppointmentController::class)->except(["show","create","edit","update"]);
+    Route::resource("service", ServiceController::class)->except("show");
+    Route::resource("portfolio", PortfolioController::class)->except("show");
+    Route::resource("pcategory", PortfolioCategoryController::class)->except("show");
+    Route::resource("interest", InterestController::class)->except("show");
+    Route::resource("award", AwardController::class)->except("show");
+    Route::resource("language", LanguageController::class)->except("show");
+    Route::resource("bcategory", BlogCategoryController::class)->except("show");
+    Route::resource("blog", BlogController::class)->except("show");
+    Route::resource("client", ClientController::class)->except("show");
+    Route::resource("testimonial", TestimonialController::class)->except("show");
+    Route::resource("reference", ReferenceController::class)->except("show");
+
+    Route::post("group_change_status", [FeatureGroupController::class, 'changestatus'])->name("group.change_status");
+    Route::resource("group", FeatureGroupController::class)->except("show");
+
+    Route::get("setlayout", [LayoutController::class, 'setLayout'])->name("setlayout");
+    Route::post("setlayout", [LayoutController::class, 'storelayout'])->name("storelayout");
+
+    Route::resource("visitor", VisitorController::class)->except("show");
+    Route::resource("contact", ContactController::class)->except(["show", "create", "edit", "update"]);
+    Route::resource("appointment", AppointmentController::class)->except(["show", "create", "edit", "update"]);
 });
 
 // viistor
-Route::post("visitor/{user:username}",[ProfileController::class,'visitor'])->name("visitor_store");
-Route::post("contact/{user:username}",[ProfileController::class,'contact'])->name("contact_store");
-Route::post("appointment/{user:username}",[ProfileController::class,'appointment'])->name("appointment_store");
+Route::post("visitor/{user:username}", [ProfileController::class, 'visitor'])->name("visitor_store");
+Route::post("contact/{user:username}", [ProfileController::class, 'contact'])->name("contact_store");
+Route::post("appointment/{user:username}", [ProfileController::class, 'appointment'])->name("appointment_store");

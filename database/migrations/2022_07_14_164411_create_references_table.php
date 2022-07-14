@@ -15,6 +15,7 @@ class CreateReferencesTable extends Migration
     {
         Schema::create('references', function (Blueprint $table) {
             $table->id();
+            $table->morphs('referenceable');
             $table->foreignId("user_id")->constrained();
             $table->string("name");
             $table->string("phone");
@@ -35,4 +36,4 @@ class CreateReferencesTable extends Migration
     {
         Schema::dropIfExists('references');
     }
-};
+}
