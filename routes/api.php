@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CertificateController;
 use App\Http\Controllers\Api\ExperienceController;
+use App\Http\Controllers\Api\ReferenceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,15 +32,18 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('logoutall', [AuthController::class, 'logoutall']);
 
+    //references
+    Route::apiResource('references/{type}/{typeId}', ReferenceController::class)
+        ->only(['index', 'store']);
+    Route::apiResource('references', ReferenceController::class)
+        ->only(['show', 'destroy']);
+
+    //certificates
+    Route::apiResource('certificates/{type}/{typeId}', CertificateController::class)
+        ->only(['index', 'store']);
+    Route::apiResource('certificates', CertificateController::class)
+        ->only(['destroy']);
+
     //experiences
     Route::apiResource('experiences', ExperienceController::class);
-
-    // Route::apiResource('experiences/{experience}/references', ExperienceController::class)
-    //     ->only(['referencesIndex', 'referencesStore', 'referencesDestroy'])
-    //     ->names([
-    //         'referencesIndex' => 'experience.reference',
-    //         'referencesStore' => 'experience.reference.store',
-    //         'referencesDestroy' => 'experience.reference.destroy'
-    //     ]);
-    // Route::apiResource('work-experiences.certificates', WorkExperienceController::class);
 });
