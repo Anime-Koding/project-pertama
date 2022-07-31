@@ -47,6 +47,12 @@ Route::get("profile/{user:username}", [ProfileController::class, 'index'])->name
 // Route::get("privacy",[GuestController::class,'privacy'])->name("privacy");
 // Route::get("help",[GuestController::class,'help'])->name("help");
 
+Route::get("/company" , function() {
+    return view('company.index', [
+        "header" => "Company"
+    ]);
+});
+
 // admin
 Route::middleware(['auth:sanctum', 'verified'])->prefix("/admin")->group(function () {
     Route::resource("layout", LayoutController::class)->except("show");
