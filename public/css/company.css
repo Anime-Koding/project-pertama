@@ -1,0 +1,138 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    position: relative;
+    border-radius: 10px !important;
+}
+
+
+/* text */
+.bold {
+    font-weight: bold;
+}
+.manrope {
+    font-family: Manrope;
+}
+
+/* margin */
+.mabo-10px {
+    margin-bottom: 10px;
+}
+.mabo-20px {
+    margin-bottom: 20px;
+}
+.mabo-30px {
+    margin-bottom: 30px;
+}
+.matop-30px {
+    margin-top: 30px;
+}
+.mabo-50px {
+    margin-bottom: 50px;
+}
+.male-20px {
+    margin-left: 20px;
+}
+
+.list-disc {
+    list-style: disc;
+}
+
+/* left section */
+.left {
+    border-radius: 0px !important;
+    border-right: 1px solid #C8CBCA;
+}
+.profile {
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0px !important;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #C8CBCA;
+    font-family: Manrope;
+}
+.navigation {
+    height: 1150px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.name-company {
+    line-height: 10px;
+}
+.name-company p:nth-child(1) {
+    font-size: 20px;
+}
+.nav-button{
+    height: 50px;
+    font-size: 20px;
+}
+
+/* right section */
+.right {
+    height: 100%;
+    border-radius: none;
+    padding: 40px;
+    font-family: Manrope;
+    box-sizing: border-box;
+}
+
+/* company profile section - right */
+.info {
+    margin-top: 50px;
+}
+.info div:nth-child(1), .info div:nth-child(2) {
+    height: 100%;
+    position: relative;
+    width: 50%;
+}
+
+/* Social media section - right */
+.text {
+    margin-top: -15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.add-other-btn {
+    font-size: 18px;
+    font-weight: bold; 
+    margin-top: 20px;
+}
+
+/* visi misi section */
+.wraper-visi-misi {
+    width: 100%; 
+    padding: 10px; 
+    box-sizing: border-box; 
+    border-bottom: 1px solid #C8CBCA;
+    border-radius: 0px !important;
+}
+
+.btn-edit {
+    padding: 10px 30px;
+    border-radius: 3px;
+    margin-top: 100px;
+    margin-left: 100px;
+    position: absolute;
+    border: 1px solid #F57039; 
+}
+
+
+/* no load */
+.content {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+.click-add {
+    height: 40px;
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #F57039;
+    font-size: 18px;
+    color: #F57039;
+}

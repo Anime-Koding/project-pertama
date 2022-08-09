@@ -10,12 +10,14 @@
     <meta name="description" content="{{ $settings->description }}">
     <meta name="keyword" content="{{ $settings->keywords }}">
     <link rel="shortcut icon" href="{{ $settings->favicon ? url("storage/".$settings->favicon) : asset("assets/dash/src/images/favicon.png") }}">
-    <title>@if($header) {{ $header }} | @endif{{ $settings->site_title }}</title>
+    <title>@if( isset($header)) {{ $header }} @else {{ "Company" }} | @endif{{ $settings->site_title }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset("assets/dash/src") }}/assets/css/dashlite.css?ver=2.9.1">
     <link id="skin-default" rel="stylesheet" href="{{ asset("assets/dash/src") }}/assets/css/theme.css?ver=2.9.1">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/company.css') }}">
     @livewireStyles
     @stack('css')
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -217,6 +219,14 @@
                 <div class="nk-header nk-header-fixed is-light">
                     <div class="container-fluid">
                         <div class="nk-header-wrap">
+
+                            <div class="btn btn-primary">
+                                <a href="/company" style="padding: 5px 10px;">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-building text-white"></em></span>
+                                    <span class="nk-menu-text text-white">Experience</span>
+                                </a>
+                            </div>
+
                             <div class="nk-menu-trigger d-xl-none ml-n1">
                                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
                             </div>
@@ -284,7 +294,7 @@
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
-                                <div class="nk-block-head nk-block-head-sm">
+                                <div class=@if ( isset($header) ) {{ "nk-block-head nk-block-head-sm" }} @else {{ "hidden" }} @endif>
                                     <div class="card card-preview">
                                         <div class="card-body">
                                             <div class="nk-block-between">

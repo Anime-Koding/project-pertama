@@ -25,6 +25,7 @@ use App\Http\Controllers\User\VisitorController;
 
 // public
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\CompanyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,12 @@ use Illuminate\Support\Facades\Route;
 // ladning page
 Route::get('/', function () {
     return view('welcome');
+});
+
+// company
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/company', function () { return view('company.index'); });
+    Route::get('/{id}/detail', function ($id) { return view('company.detail'); });
 });
 
 Route::get("profile/{user:username}", [ProfileController::class, 'index'])->name("profile");
@@ -61,6 +68,11 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix("/admin")->group(functio
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, "index"])->name('dashboard');
     Route::post('/update_public', [DashboardController::class, "update_public"])->name('update_public');
+
+    Route::controller(CompanyController::class)->prefix("company")->group(function() {
+        Route::get("/", 'index')->name("index");
+        Route::get("{id}/edit", 'edit')->name("edit");
+    });
 
     Route::resource("experience", ExperienceController::class)->except("show");
     Route::resource("education", EducationController::class)->except("show");
